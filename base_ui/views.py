@@ -20,3 +20,9 @@ def home(request):
     context = {'country_names': country_names,
                'cases': cases, 'total_cases': total_cases}
     return render(request, 'base_ui/home.html', context)
+
+
+def country(request):
+    context = {}
+
+    return render(request, 'base_ui/home.html', context)
