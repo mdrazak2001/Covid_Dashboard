@@ -51,20 +51,13 @@ def heat_map(bar_graph, country_names):
     """Few prominent country names differed in sample data of heat_map & our
     bar_graph csv names so now have to filter them & add to our heat_map json  """
 
-    From = ['US', 'Russia', 'Iran', 'Slovakia', 'Korea, South', 'Venezuela', 'Egypt',
-            'North Macedonia', 'Kyrgyzstan', 'Laos', 'Congo (Kinshasa)', 'Syria', 'Bahamas', 'Congo (Brazzaville)', 'Brunei',
-            'Gambia', 'Yemen', 'Burma', 'Greenland', 'Saint Vincent and the Grenadines',
-            'Saint Kitts and Nevis', 'Micronesia']
+    From = ['US', 'Russia', 'Iran', 'Slovakia', 'Korea, South', 'Venezuela', 'Egypt', 'North Macedonia', 'Kyrgyzstan', 'Kosovo', 'Laos', 'Congo (Kinshasa)', 'Syria', 'Bahamas', 'Congo (Brazzaville)', 'Brunei',
+            'Gambia', 'Yemen', 'Burma', 'Greenland', 'Saint Vincent and the Grenadines', 'Saint Kitts and Nevis', 'Micronesia']
     # 'Eritrea' not in to json file
     To = ['United States', 'Russian Federation', 'Iran, Islamic Rep.', 'Slovak Republic', 'Korea, Rep.',
-          'Venezuela, RB', 'Egypt, Arab Rep.', 'Macedonia, FYR',
-          'Kyrgyz Republic', 'Lao PDR', 'Congo, Dem. Rep.', 'Syrian Arab Republic',
-          'Bahamas, The', 'Congo, Rep.', 'Brunei Darussalam', 'Gambia, The', 'Yemen, Rep.',
-          'Myanmar', 'Greenland', 'St. Vincent and the Grenadines', 'St. Kitts and Nevis',
-          'Micronesia, Fed. Sts.']
-    # print(len(From), len(To))
-    '''From countries(in covid data file) &
-       To countries(in data to pass in map format mapping)'''
+          'Venezuela, RB', 'Egypt, Arab Rep.', 'Macedonia, FYR', 'Kyrgyz Republic', 'Lao PDR', 'Congo, Dem. Rep.', 'Syrian Arab Republic',
+          'Bahamas, The', 'Congo, Rep.', 'Brunei Darussalam', 'Gambia, The', 'Yemen, Rep.', 'Myanmar', 'Greenland', 'St. Vincent and the Grenadines', 'St. Kitts and Nevis', 'Micronesia, Fed. Sts.']
+
     for i, missing_country in enumerate(To):
         try:
             df = data[data['name'] == missing_country]

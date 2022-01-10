@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base_ui',
+    'data_insights',
 ]
 
 MIDDLEWARE = [
