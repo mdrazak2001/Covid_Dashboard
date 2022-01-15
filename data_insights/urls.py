@@ -7,5 +7,6 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
-    path('country/<str:country_index>', views.countryInsights, name="home"),
+    path('country/<str:country_index>',
+         views.countryInsights, name="country_graph"),
 ]
