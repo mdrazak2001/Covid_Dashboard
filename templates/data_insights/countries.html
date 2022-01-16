@@ -2,21 +2,33 @@
 
 {% block content %}
 
-
 <div class="container" style="height: 40%;">
   <div class="row">
-    <center><h2>{{country}}</h2></center>
+    <center><h2>{{country1}} VS {{country2}}</h2></center>
     <hr>
   </div>
   <center>
     <div class="row-fluid">
-      Select Different Country: 
+      Compare any 2 Countries : 
       <form method="post">
         {% csrf_token %}
-        <div class="row">
+        <div>
           <div>
-            <select required name = 'test' id = 'test' class="selectpicker" data-show-subtext="false" data-live-search="true">
-              <option value="" disabled selected>Select Country</option>
+            <select name = 'test1' id = 'test1' class="selectpicker" data-show-subtext="false" data-live-search="true" required>
+                <option value="" disabled selected hidden>Select Country 1</option>
+                {% for c in countries_display %}
+                {% for choice in country_map.items %} 
+                  {% if choice.0 == c %}
+                    <option value={{choice.1}}>{{c}}</option>
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            </select>
+          </div>
+          <h2>VS</h2>
+          <div>
+            <select name = 'test2' id = 'test2' class="selectpicker" data-show-subtext="false" data-live-search="true" required>
+                <option value="" disabled selected hidden>Select Country 2</option>
               {% for c in countries_display %}
                 {% for choice in country_map.items %} 
                   {% if choice.0 == c %}
@@ -26,7 +38,7 @@
               {% endfor %}
             </select>
           </div>
-          <br> <br>
+          <br> 
           <div><input style="float: center;" type="submit" value="Submit" class="btn btn-primary"></div>
         </div>
       </form>
