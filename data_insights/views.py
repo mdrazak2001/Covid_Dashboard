@@ -17,7 +17,7 @@ confirmedGlobal = pd.read_csv(
 def countryInsights(request, country_index):
     if request.method == 'POST':
         country_idx = request.POST['test']
-        print(country_idx)
+        # print(country_idx)
         return redirect('country_graph', country_idx)
     context = {}
     total_cases = confirmedGlobal[confirmedGlobal.columns[-1]].sum()
@@ -81,13 +81,10 @@ def country_mapping(country_names):
 
 def get_data_csv(row, bar_graph):
     data = []
-    data_csv = bar_graph
-    data_csv.reset_index()
-    data_csv.columns = ['date', 'cases']
-    data_csv = data_csv.drop(range(0, 196))
-
+    data_csv =  pd.DataFrame(columns=['date', 'cases'])
     for i, col in enumerate(row):
         cases = list(row[col])[0]
+        # print(i, row[col])
         t = {}
         if i > 3 and cases != 0:
             new_cases = 0
