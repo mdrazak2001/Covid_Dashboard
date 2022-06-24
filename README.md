@@ -1,4 +1,5 @@
 # Covid_Dashboard
+Data visualization of covid cases around the globe using various free to use open libraries.
 
 ## Setup
 
