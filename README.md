@@ -22,3 +22,5 @@ Then go to the browser and enter the url http://127.0.0.1:8000/
 Check The demo of project :
 https://www.youtube.com/watch?v=312uha5HsDs
 
+## Dockerhub Container link
+https://hub.docker.com/repository/docker/razak123/covid_dashboard#description
